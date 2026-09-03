@@ -9,6 +9,15 @@
         "export PATH=/opt/homebrew/bin:$PATH && exec npm run dev -w tv-emulator"
       ],
       "port": 5173
+    },
+    {
+      "name": "tracking-service",
+      "runtimeExecutable": "/bin/bash",
+      "runtimeArgs": [
+        "-c",
+        "export PATH=/opt/homebrew/bin:$PATH && exec npm run dev -w tracking-service"
+      ],
+      "port": 4001
     }
   ]
 }

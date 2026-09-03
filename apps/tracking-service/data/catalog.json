@@ -1,0 +1,20 @@
+[
+  {
+    "uniqueID": "demo-chrysler-pacifica",
+    "name": "2023 Chrysler Pacifica L",
+    "brand": "Demo Motors",
+    "price": 38995,
+    "currency": "USD",
+    "availability": "in_stock",
+    "purchaseUrl": "#"
+  },
+  {
+    "uniqueID": "demo-sedan-lx",
+    "name": "Compact Sedan LX",
+    "brand": "Demo Motors",
+    "price": 24995,
+    "currency": "USD",
+    "availability": "in_stock",
+    "purchaseUrl": "#"
+  }
+]

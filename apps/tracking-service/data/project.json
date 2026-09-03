@@ -1,0 +1,50 @@
+{
+  "programUID": "prg_sandbox_demo",
+  "frames": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [{ "uniqueID": "demo-chrysler-pacifica", "xPercent": 38, "yPercent": 62 }],
+    [{ "uniqueID": "demo-chrysler-pacifica", "xPercent": 38, "yPercent": 62 }],
+    [{ "uniqueID": "demo-chrysler-pacifica", "xPercent": 38, "yPercent": 62 }],
+    [{ "uniqueID": "demo-chrysler-pacifica", "xPercent": 38, "yPercent": 62 }],
+    [{ "uniqueID": "demo-chrysler-pacifica", "xPercent": 38, "yPercent": 62 }],
+    [
+      { "uniqueID": "demo-chrysler-pacifica", "xPercent": 38, "yPercent": 62 },
+      { "uniqueID": "demo-sedan-lx", "xPercent": 78, "yPercent": 32 },
+      { "uniqueID": "unmatched-lamp-001", "xPercent": 55, "yPercent": 20 }
+    ],
+    [
+      { "uniqueID": "demo-chrysler-pacifica", "xPercent": 38, "yPercent": 62 },
+      { "uniqueID": "demo-sedan-lx", "xPercent": 78, "yPercent": 32 },
+      { "uniqueID": "unmatched-lamp-001", "xPercent": 55, "yPercent": 20 }
+    ],
+    [
+      { "uniqueID": "demo-chrysler-pacifica", "xPercent": 38, "yPercent": 62 },
+      { "uniqueID": "demo-sedan-lx", "xPercent": 78, "yPercent": 32 },
+      { "uniqueID": "unmatched-lamp-001", "xPercent": 55, "yPercent": 20 }
+    ],
+    [
+      { "uniqueID": "demo-chrysler-pacifica", "xPercent": 38, "yPercent": 62 },
+      { "uniqueID": "demo-sedan-lx", "xPercent": 78, "yPercent": 32 },
+      { "uniqueID": "unmatched-lamp-001", "xPercent": 55, "yPercent": 20 }
+    ],
+    [
+      { "uniqueID": "demo-chrysler-pacifica", "xPercent": 38, "yPercent": 62 },
+      { "uniqueID": "demo-sedan-lx", "xPercent": 78, "yPercent": 32 },
+      { "uniqueID": "unmatched-lamp-001", "xPercent": 55, "yPercent": 20 }
+    ],
+    [
+      { "uniqueID": "demo-chrysler-pacifica", "xPercent": 38, "yPercent": 62 },
+      { "uniqueID": "demo-sedan-lx", "xPercent": 78, "yPercent": 32 },
+      { "uniqueID": "unmatched-lamp-001", "xPercent": 55, "yPercent": 20 }
+    ]
+  ]
+}
