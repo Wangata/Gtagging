@@ -18,6 +18,24 @@
         "export PATH=/opt/homebrew/bin:$PATH && exec npm run dev -w tracking-service"
       ],
       "port": 4001
+    },
+    {
+      "name": "events-service",
+      "runtimeExecutable": "/bin/bash",
+      "runtimeArgs": [
+        "-c",
+        "export PATH=/opt/homebrew/bin:$PATH && exec npm run dev -w events-service"
+      ],
+      "port": 4002
+    },
+    {
+      "name": "mobile-remote",
+      "runtimeExecutable": "/bin/bash",
+      "runtimeArgs": [
+        "-c",
+        "export PATH=/opt/homebrew/bin:$PATH && exec npm run dev -w mobile-remote"
+      ],
+      "port": 5174
     }
   ]
 }
