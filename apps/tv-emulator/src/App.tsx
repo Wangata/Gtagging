@@ -2,7 +2,9 @@ import { useCallback, useState } from 'react'
 import { DebugMenu } from './components/DebugMenu'
 import { TvScreen } from './components/TvScreen'
 import { RemoteGraphic } from './components/RemoteGraphic'
+import { useTvPairing } from './hooks/useTvPairing'
 import { generatePairingCode } from './lib/pairing'
+import { describeRemoteInput } from './lib/remoteInput'
 import type { DiagnosticsEntry } from './types'
 
 const DEFAULT_VIDEO_URL = 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4'
@@ -19,6 +21,8 @@ export default function App() {
   const [enableAudio, setEnableAudio] = useState(false)
   const [log, setLog] = useState<DiagnosticsEntry[]>([])
 
+  const [lastRemoteInput, setLastRemoteInput] = useState<string | null>(null)
+
   const addLog = useCallback((message: string) => {
     setLog((prev) => [
       ...prev.slice(-199),
@@ -29,6 +33,16 @@ export default function App() {
       },
     ])
   }, [])
+
+  useTvPairing(
+    pairingCode,
+    (input) => {
+      const description = describeRemoteInput(input)
+      setLastRemoteInput(description)
+      addLog(`[Remote] ${description}`)
+    },
+    addLog
+  )
 
   return (
     <div className="flex h-screen w-screen bg-slate-950">
@@ -64,7 +78,12 @@ export default function App() {
           enableAudio={enableAudio}
           onLog={addLog}
         />
-        <RemoteGraphic />
+        <div className="flex flex-col items-center gap-3">
+          <RemoteGraphic />
+          <p className="h-4 font-mono text-xs text-slate-500">
+            {lastRemoteInput ? `↳ ${lastRemoteInput}` : ''}
+          </p>
+        </div>
       </main>
     </div>
   )

@@ -24,13 +24,24 @@ Spec documents GrabTV provided live in [docs/](docs/).
   needed); set `SHEET_ID` to point it at a real published Google Sheet.
   `npm test -w tracking-service` runs its offline test suite.
 
-Not yet wired together: the TV emulator's `/api/query` mock and this
-service are independent for now — same request/response shape, ready to
-swap once you want the emulator hitting the real resolver.
+- **[apps/mobile-remote](apps/mobile-remote)** — React/Tailwind companion app:
+  pairing-code input, D-pad, trackpad, and mic toggle. Connects to
+  events-service as `role=remote` and sends button/trackpad/mic input over
+  the pairing code.
+- **[apps/events-service](apps/events-service)** — Node/WebSocket relay
+  matching "grabtv-events" in
+  [docs/GRABTV_ENVIRONMENTS_AZURE.md](docs/GRABTV_ENVIRONMENTS_AZURE.md): a
+  TV registers under its pairing code (`role=tv`), a mobile remote joins the
+  same code (`role=remote`), and the remote's input is relayed to the TV in
+  real time. In-memory only, no persistence.
+
+Not yet wired together: the TV emulator's `/api/query` mock and
+tracking-service are independent for now — same request/response shape,
+ready to swap once you want the emulator hitting the real resolver.
 
 Planned next: the AI Tagging & Catalog Service
-([docs/GRABTV_AI_TAGGING_AND_CATALOG_SERVICE.md](docs/GRABTV_AI_TAGGING_AND_CATALOG_SERVICE.md)),
-a Mobile Remote app, and Azure deployment scaffolding
+([docs/GRABTV_AI_TAGGING_AND_CATALOG_SERVICE.md](docs/GRABTV_AI_TAGGING_AND_CATALOG_SERVICE.md))
+and Azure deployment scaffolding
 ([docs/GRABTV_ENVIRONMENTS_AZURE.md](docs/GRABTV_ENVIRONMENTS_AZURE.md)).
 
 ## Run
@@ -39,10 +50,14 @@ a Mobile Remote app, and Azure deployment scaffolding
 npm install
 npm run build -w @grabtv/client-sdk
 npm run dev -w tv-emulator          # http://localhost:5173
+npm run dev -w mobile-remote         # http://localhost:5174
 npm run dev -w tracking-service     # http://localhost:4001
+npm run dev -w events-service       # http://localhost:4002
 ```
 
-Open http://localhost:5173. Toggle "Enable Click Handler" and click the
-video — the debug menu's diagnostics log shows the SDK loading, computing
-click telemetry, and the mock tracking service resolving a nearby catalog
-item.
+Open http://localhost:5173 (TV emulator) — toggle "Enable Click Handler" and
+click the video to see the SDK → telemetry → mock tracking service loop in
+the diagnostics log. Open http://localhost:5174 (mobile remote) on another
+device or browser tab, enter the TV's pairing code (shown in its Device
+Pairing panel), and tap Pair — D-pad, OK, and mic presses show up live in the
+TV's diagnostics log via events-service.
