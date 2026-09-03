@@ -1,0 +1,13 @@
+{
+  "name": "@grabtv/client-sdk",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --format=iife --outfile=dist/grabtv-client.js",
+    "dev": "esbuild src/index.ts --bundle --format=iife --outfile=dist/grabtv-client.js --watch"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.0",
+    "typescript": "^5.6.0"
+  }
+}

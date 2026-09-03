@@ -1,0 +1,12 @@
+{
+  "name": "grabtv",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "allowScripts": {
+    "fsevents@2.3.3": true,
+    "esbuild@0.24.2": true
+  }
+}

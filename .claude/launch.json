@@ -1,0 +1,14 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "tv-emulator",
+      "runtimeExecutable": "/bin/bash",
+      "runtimeArgs": [
+        "-c",
+        "export PATH=/opt/homebrew/bin:$PATH && exec npm run dev -w tv-emulator"
+      ],
+      "port": 5173
+    }
+  ]
+}
